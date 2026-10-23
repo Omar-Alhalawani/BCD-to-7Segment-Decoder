@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 // Directed verification for BCD digits 0 through 9.
-// The lab treats 10 through 15 as don't-care inputs, so they are not asserted.
+// Inputs 10 through 15 are treated as don't-care conditions, so they are not asserted.
 module tb_bcd_7segment;
     reg w, x, y, z;
     wire [3:0] select;
@@ -8,7 +8,7 @@ module tb_bcd_7segment;
     integer digit;
     reg [6:0] expected;
 
-    lab3_7segment dut (
+    bcd_7segment dut (
         .w(w), .x(x), .y(y), .z(z),
         .select(select), .a(a), .b(b), .c(c), .d(d),
         .e(e), .f(f), .g(g)
