@@ -2,7 +2,7 @@
 
 **Verilog RTL · combinational logic · Boolean minimization · Blackboard FPGA · Vivado**
 
-A **4-bit binary-coded decimal (BCD) to 7-segment display decoder** built for a Digital Systems laboratory. The circuit drives one digit of the Blackboard FPGA's common-anode 7-segment display. It uses minimized Boolean expressions to translate an input from **0 to 9** into **seven active-low segment outputs**.
+A **4-bit binary-coded decimal (BCD) to 7-segment display decoder** designed for FPGA-based digital logic. The circuit drives one digit of the Blackboard FPGA's common-anode 7-segment display. It uses minimized Boolean expressions to translate an input from **0 to 9** into **seven active-low segment outputs**.
 
 The repository includes the original Verilog implementation, FPGA pin constraints, an accompanying Logisim circuit, and a directed simulation testbench.
 
@@ -81,7 +81,7 @@ The testbench checks every valid BCD input against an independently specified ac
 ## Run on the Blackboard FPGA
 
 1. Create a Vivado RTL project for the **exact FPGA device on your Blackboard revision**.
-2. Add `rtl/bcd_7segment.v`; set `lab3_7segment` as the top module.
+2. Add `rtl/bcd_7segment.v`; set `bcd_7segment` as the top module.
 3. Add `constraints/blackboard_7seg.xdc`, checking its `PACKAGE_PIN` assignments against your board.
 4. Run synthesis, implementation, and bitstream generation.
 5. Program the board; use switches SW0–SW3 to select digits 0–9.
@@ -99,7 +99,7 @@ Open `logisim/bcd_7segment.circ` in a compatible Logisim release (the file decla
 - The implementation drives **one digit only**; it has no clocked scanning or decimal-point logic.
 - All ten supported digits match the standard active-low patterns, based on an independent Boolean-expression check.
 - The testbench and Verilog sources are committed as reproducible artifacts; **live FPGA results and timing measurements are not claimed**.
-- Course lab manuals are not redistributed here. This repository publishes the project implementation and original documentation rather than the instructors' copyrighted handouts.
+- This repository includes the implementation, board constraints, Logisim design, and testbench.
 
 ### Related project
 
